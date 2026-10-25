@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>YourName AI — AI Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">✦</div><div><strong>YourName AI</strong><small>AI assistant</small></div></div>
+      <button class="new-chat" id="newChat">＋ <span data-i18n="newChat">New chat</span></button>
+      <div class="side-label" data-i18n="recent">RECENT</div>
+      <div id="history" class="history"></div>
+      <div class="sidebar-bottom">
+        <label class="side-label" for="language" data-i18n="language">LANGUAGE</label>
+        <select id="language" aria-label="Interface language">
+          <option value="en">English</option><option value="bn">বাংলা</option><option value="es">Español</option>
+          <option value="fr">Français</option><option value="ar">العربية</option><option value="hi">हिन्दी</option>
+        </select>
+        <div class="user-chip"><div class="avatar">Y</div><div><strong data-i18n="guest">Guest user</strong><small data-i18n="localOnly">Chats saved on this device</small></div></div>
+      </div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="model-picker"><span class="status-dot"></span><select id="model"><option value="demo">Demo mode (no API)</option><option value="cloudflare">Cloudflare Workers AI (setup required)</option></select></div>
+        <button class="icon-btn" id="clearBtn" title="Clear current chat" aria-label="Clear current chat">⌫</button>
+      </header>
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="welcome-mark">✦</div>
+          <p class="eyebrow" data-i18n="eyebrow">YOUR PERSONAL AI ASSISTANT</p>
+          <h1 data-i18n="headline">What can I help you with?</h1>
+          <p class="welcome-sub" data-i18n="subhead">Ask a question, explore an idea, or get help with a task.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain artificial intelligence in simple words">✧ <span data-i18n="idea1">Explain AI simply</span></button>
+            <button class="suggestion" data-prompt="Write a professional email asking for a job">✉ <span data-i18n="idea2">Write a job email</span></button>
+            <button class="suggestion" data-prompt="Give me a plan to learn coding in 30 days">⌘ <span data-i18n="idea3">Make a learning plan</span></button>
+            <button class="suggestion" data-prompt="বাংলায় একটি অনুপ্রেরণামূলক ছোট গল্প লেখো">✎ <span data-i18n="idea4">Write a Bengali story</span></button>
+          </div>
+        </div>
+        <div id="messages" class="messages"></div>
+      </section>
+      <footer class="composer-wrap">
+        <form id="chatForm" class="composer">
+          <textarea id="prompt" rows="1" placeholder="Message YourName AI..." aria-label="Message AI"></textarea>
+          <div class="composer-tools"><span class="hint" data-i18n="hint">AI can make mistakes. Check important information.</span><button class="send-btn" id="sendBtn" type="submit" aria-label="Send message">↑</button></div>
+        </form>
+        <p class="disclaimer" data-i18n="disclaimer">Starter project • Demo mode does not use a real AI model.</p>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
