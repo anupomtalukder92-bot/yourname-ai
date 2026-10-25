@@ -4,7 +4,7 @@ let chats = loadChats();
 let currentId = chats[0]?.id || makeId();
 let busy = false;
 // After deploying worker/worker.js, paste your Worker URL below. Keep secret keys on the server, never here.
-const WORKER_API_URL = "";
+const WORKER_API_URL = "https://anupom-ai-backend.anupomtalukder92.workers.dev";
 
 const translations = {
  en:{newChat:"New chat",recent:"RECENT",language:"LANGUAGE",guest:"Guest user",localOnly:"Chats saved on this device",eyebrow:"YOUR PERSONAL AI ASSISTANT",headline:"What can I help you with?",subhead:"Ask a question, explore an idea, or get help with a task.",idea1:"Explain AI simply",idea2:"Write a job email",idea3:"Make a learning plan",idea4:"Write a Bengali story",hint:"AI can make mistakes. Check important information.",disclaimer:"Starter project • Demo mode does not use a real AI model."},
